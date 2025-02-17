@@ -3,4 +3,6 @@ The text of each message should be the same, but each message should be personal
 
 names : list = ["Federico", "Riccardo", "Jacopo"]
 
-print(f"{names[0]} puzza \n{names[1]} gioca ad apex \n{names[2]} è pazzo")
+print(f"{names[0]} puzza")
+print(f"{names[1]} puzza")
+print(f"{names[2]} puzza")

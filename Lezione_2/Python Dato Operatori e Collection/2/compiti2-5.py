@@ -5,3 +5,4 @@ Your output should look something like the following, including the quotation ma
 quote : str = "Can't rain all the time"
 
 print(f"Eric Draven once said, \"{quote}\"")
+print(f'Eric Draven once said, "{quote}"')
