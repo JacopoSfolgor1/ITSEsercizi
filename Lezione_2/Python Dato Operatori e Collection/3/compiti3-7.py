@@ -9,15 +9,21 @@ Print your list to make sure you actually have an empty list at the end of your 
 
 guest_list : list = ["Cesare", "Cleopatra", "Seneca", "Aldo", "Giovanni", "Giacomo"]
 
-for i in range(6):
+for i in range(len(guest_list)):
     print(f"{guest_list[i]} we can only invite 2 people")
-    
-print(f"{guest_list.pop(5)} go away")
-print(f"{guest_list.pop(4)} go away")
-print(f"{guest_list.pop(3)} go away")
-print(f"{guest_list.pop(2)} go away")
+guest = guest_list.pop(5)   
+print(f"{guest} go away")
+guest = guest_list.pop(4)
+print(f"{guest} go away")
+guest = guest_list.pop(3)
+print(f"{guest} go away")
+guest = guest_list.pop(2)
+print(f"{guest} go away")
+
 print(f"{guest_list[1]} you still are invited")
+
 print(f"{guest_list[0]} you still are invited")
 
-del guest_list
+del guest_list[0]
+del guest_list[1]
 print(guest_list)

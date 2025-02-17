@@ -11,5 +11,5 @@ guest_list : list = ["Cesare", "Cleopatra", "Seneca"]
 guest_list.insert(0, "Aldo") 
 guest_list.insert(2, "Giovanni")
 guest_list.append("Giacomo")
-for i in range(6):
+for i in range(len(guest_list)):
     print(f"come dining now {guest_list[i]} we have a bigger table for you")
