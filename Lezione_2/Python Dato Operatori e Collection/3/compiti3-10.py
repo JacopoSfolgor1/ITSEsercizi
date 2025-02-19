@@ -21,7 +21,11 @@ print(languages)
 languages.sort()
 print(languages)
 
+languages += [4] #adds 4 in the list as last number
+
 print(sorted(languages, reverse = True))
 
-del languages
+languages.clear() #remove items in list but not list
+
+del languages #remove everything
 print(languages)

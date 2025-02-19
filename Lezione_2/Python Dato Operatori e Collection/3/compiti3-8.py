@@ -14,20 +14,20 @@ Print the list to show that its order has changed.'''
 places : list = ["Norway", "Japan", "Belgium", "Greenland", "Croatia"]
 print(places)
 
-print(sorted(places))
+print(sorted(places)) #new list with sorted, key function works to iterate on which condition you want to apply
 print(places)
 
-print(sorted(places, reverse=True))
+print(sorted(places, reverse=True)) #reverse = True means that it will go from lower to upper 
+print(places)
+
+places.reverse() #same list modification
 print(places)
 
 places.reverse()
 print(places)
 
-places.reverse()
+places.sort() #same list modification
 print(places)
 
-places.sort()
-print(places)
-
-places.sort(reverse = True)
+places.sort(reverse = True) #same list modification with reverse order
 print(places)
