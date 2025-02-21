@@ -34,8 +34,8 @@ for keys, values in dtry.items():
 
 
 firstlst: list = [1, 2, 3, 4, 5, 6]
-firstlst.extend({"key": "value", "Bool": True} ) #adds only keys
-firstlst.extend({"key" : "value", "Bool" : True}.items()) # adds keys and value
+firstlst.extend({"key": "value", "Bool": True} ) #adds only keys as tupla from dict
+firstlst.extend({"key" : "value", "Bool" : True}.items()) # adds keys and value as tupla from dict
 print(firstlst) #adds 
 
 mydict: dict[str, int] = {"a": 5, "b": 2} 
