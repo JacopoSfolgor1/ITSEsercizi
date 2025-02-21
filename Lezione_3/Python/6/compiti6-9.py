@@ -3,7 +3,7 @@ and store one to three favorite places for each person. To make this exercise a 
 ask some friends to name a few of their favorite places. 
 Loop through the dictionary, and print each person’s name and their favorite places.'''
 
-favorite_places: dict = {"Jacopo" : "Japan, Norway, Switzerland", "Federico" : "Iran, Afghanistan", "Riccardo" : "Giordania"}
+favorite_places: dict = {"Jacopo" : "Japan, Norway, Switzerland", "Federico" : "Iran, Afghanistan", "Riccardo" : "Russia"}
 
 for key, value in favorite_places.items():
     print(f"{key} loves {value}")
