@@ -67,57 +67,59 @@ rettili:list = ["serpente", "lucertola", "tartaruga", "coccodrillo"]
 uccelli:list = ["aquila", "pappagallo", "gufo", "falco", "cigno", "anatra", "gallina", "tacchino"] 
 pesci:list = ["squalo", "trota", "salmone", "carpa"]
 
+animal:str = str(input("Inserisci il nome animale: ")).lower()
+habitat: str = str(input("Inserisci l'habitat dell'animale: ")).lower()
 
+animal_type: str = ""
 
-animals: dict = {"animale": "", "animal type": "", "habitat": ""}
-
-animale: str = str(input("digita il nome di un animale: ")).lower()
-habitat: str = str(input("inserisci l'habitat dell'animale: ")).lower()
-
-
-
-match animale:
-    case animale if animale in mammiferi:
-        if animale != "balena" or "delfino" and habitat == "terra":
-            animals.update({"animale": animale, "animal type": "mammifero", "habitat" : {habitat}})
-            print("escluso delfino e balena sono tutti mammiferi di terra")
-        elif animale == "balena" or "delfino" and habitat == "acqua":
-            animals.update({"animale": animale, "animal type": "mammifero", "habitat" : {habitat}})
-            print("Delfino e balena vanno in acqua come mammiferi")
-    case animale if animale in rettili: 
-        if habitat != "aria":
-            animals.update({"animale": animale, "animal type": "rettile", "habitat" : {habitat}})
-            print("I rettili in questione possono essere sia di terra che acqua")
-    case animale if animale in uccelli:
-        if animale == "cigno" or "anatra" or "gallina" or "tacchino" and habitat == "acqua":
-            animals.update({"animale": animale, "animal type": "uccello", "habitat" : {habitat}})
-            print("L'uccello in questione NON può volare")
-        elif animale == "aquila" or "pappagallo" or "gufo" or "falco" and habitat == "aria":
-                animals.update({"animale": animale, "animal type": "uccello", "habitat" : {habitat}})
-                print("L'uccello in questione può volare")
-    case animale if animale in pesci:
-        if habitat == "acqua":
-            animals.update({"animale": animale, "animal type": "uccello di terra", "habitat" : {habitat}})
-        else:
-            animals.update({"animale": animale, "animal type": "uccello di terra", "habitat" : {habitat}})
-            print("il pesce in questione non è nel suo habitat")
-
-
-
-for key, value in animals.items():
-    print(key, value)
-
-
-'''habitats:list = ["acqua", "aria", "terra"]
-animale: str = str(input("digita il nome di un animale: ")).lower()
-match animale:
-    case animale if animale in mammiferi:
-        print(f"{animale} appartiene alla categoria mammiferi!")
-    case animale if animale in rettili:
-        print(f"{animale} appartiene alla categoria rettili!")
-    case animale if animale in uccelli:
-        print(f"{animale} appartiene alla categoria uccelli!")
-    case animale if animale in pesci:
-        print(f"{animale} appartiene alla categoria pesci!")
+match animal:
+    case animal if animal in mammiferi:
+        print(f"{animal} appartiene alla categoria mammiferi!")
+        animal_type = "mammifero"
+    case animal if animal in rettili:
+        print(f"{animal} appartiene alla categoria rettili!")
+        animal_type = "rettile"
+    case animal if animal in uccelli:
+        print(f"{animal} appartiene alla categoria uccelli!")
+        animal_type = "uccello"
+    case animal if animal in pesci:
+        print(f"{animal} appartiene alla categoria pesci!")
+        animal_type = "pesce"
     case _:
-        print(f"Non so dire in quale categoria classificare l'animale {animale}")'''
+        print(f"Non so dire in quale categoria classificare l'animale {animal}")
+        animal_type = "unknown"
+
+info: dict = {"nome": animal, "tipo": animal_type, "habitat": habitat}
+
+match info:
+    
+    case {"nome": value, "tipo": "mammifero", "habitat": value2} if value not in ["delfino", "balena"] and value2 == "terra":
+        print(f"{animal} è un {animal_type} e va su {habitat}") 
+    case {"nome": value, "tipo": "mammifero", "habitat": value2} if value not in ["delfino", "balena"] and value2 != "terra":
+        print(f"{animal} è un {animal_type} e NON va su {habitat}")
+    case {"nome": value, "tipo": "mammifero", "habitat": value2} if value in ["delfino", "balena"] and value2 == "acqua":
+        print(f"{animal} è un {animal_type} e va su {habitat}")
+    case {"nome": value, "tipo": "mammifero", "habitat": value2} if value in ["delfino", "balena"] and value2 != "acqua":
+        print(f"{animal} è un {animal_type} e NON va su {habitat}")
+    
+    case {"tipo": "rettile", "habitat": value} if value != "aria":
+        print(f"{animal} è un {animal_type} e va su {habitat}")
+    case {"tipo": "rettile", "habitat": value} if value == "aria":
+        print(f"{animal} è un {animal_type} e NON va su {habitat}")
+    
+    case {"nome": value, "tipo": "uccello", "habitat": value2} if value in ["aquila", "pappagallo", "gufo", "falco"] and value2 == "aria":
+        print(f"{animal} è un {animal_type} e va su {habitat}")
+    case {"nome": value, "tipo": "uccello", "habitat": value2} if value in ["aquila", "pappagallo", "gufo", "falco"] and value2 != "aria":
+        print(f"{animal} è un {animal_type} e NON va su {habitat}")
+    case {"nome": value, "tipo": "uccello", "habitat": value2} if value not in ["aquila", "pappagallo", "gufo", "falco"] and value2 == "aria":
+        print(f"{animal} è un {animal_type} e NON va su {habitat}")
+    case {"nome": value, "tipo": "uccello", "habitat": value2} if value not in ["aquila", "pappagallo", "gufo", "falco"] and value2 != "aria":
+        print(f"{animal} è un {animal_type} e va su {habitat}")
+    
+    case {"tipo": "pesce", "habitat": value} if value == "acqua":
+        print(f"{animal} è un {animal_type} e va su {habitat}")
+    case {"tipo": "pesce", "habitat": value} if value != "acqua":
+        print(f"{animal} è un {animal_type} e NON va su {habitat}")
+    
+    case _:
+        print(f"{animal} tipo: {animal_type} non so classificarlo né dare info su habitat: {habitat}")
