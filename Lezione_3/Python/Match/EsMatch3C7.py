@@ -31,7 +31,7 @@ moneta:int = 0
 testa:float = 0
 croce:float = 0
 
-risultato: str = str(input("Inserisci risultato lancio moneta 't' (testa) o 'c' (croce):")).lower()
+risultato: str = str(input("Inserisci risultato lancio moneta 't' (testa) o 'c' (croce): ")).lower()
                   
 while moneta < 8:
     match risultato:
@@ -51,8 +51,8 @@ while moneta < 8:
     
     risultato: str = str(input("Inserisci risultato lancio moneta 't' (testa) o 'c' (croce):")).lower()
 
-endcroce = (croce / 8) * 100
-endtesta = (testa / 8) * 100
+endcroce:float = (croce / 8) * 100
+endtesta:float = (testa / 8) * 100
 
 print(f"Croce è uscito: {croce} volte \n{endcroce:.2f} è la % \n Testa è uscito: {testa} volte \n{endtesta:.2f} è la %")
 

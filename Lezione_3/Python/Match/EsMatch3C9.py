@@ -33,7 +33,7 @@ Output: Il punto (4,0) si trova sull'asse X.
 x:int = int(input("Inserisci numero asse x: "))
 y:int = int(input("Inserisci numero asse y: "))
 
-coordinate: tuple = {x, y}
+coordinate: tuple = (x, y)
 
 match coordinate:
     
