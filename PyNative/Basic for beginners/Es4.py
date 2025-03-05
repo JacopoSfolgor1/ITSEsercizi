@@ -10,20 +10,16 @@ Note: n must be less than the length of the string
 '''
 
 def remove_chars(a:str = "", b:int=0)-> list[str,int]:
-    c = str(b)
-    i2:list = []
+    
     
     if b < len(a):
-        for i in range(b+1, len(a)+1):
-            str(i)
-            i2.append(i)
+        print(a[b:])
     else:
         print("numero più grande della parola")
     
-    for i in i2:
-        print(a[i-1], end = "")
+    
 
-remove_chars("ciao",2)
+remove_chars(str(input("inserisci parola: ")),int(input("inserisci numero: ")))
 
 
 
