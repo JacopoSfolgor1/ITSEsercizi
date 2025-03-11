@@ -10,22 +10,13 @@ mostrando in output il risultato. Se n è negativo, l'algoritmo mostra un messag
 n:int = int(input("inserisci n: "))
 
     
-while True:    
-    
-    if n % 1 != 0 and n < 0:
-        print("errore numero deve esser positivo")
-        break
-    
-    else:
-        for i in range(1,n+1):
-            sum_n:int = 0
-            
-            
-            sum_n += i*i
-            i += 1
-        if i > n:
-            print(sum_n)
-            break
-                
+if n % 1 == 0 and n > 0:
+    sum_n = 0
+    i = 1
+    for i in range(n+1):
+        sum_n += i*i
+    print(sum_n)
+else:
+    print("Errore numero deve essere positivo")       
     
     

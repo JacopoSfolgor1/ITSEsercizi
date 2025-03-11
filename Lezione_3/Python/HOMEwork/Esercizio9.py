@@ -20,7 +20,7 @@ pi_app: float = 0
 i:int = 0
 
 for pi in list_pi: #itero su sequenze pi in lista
-    while abs(pi_app - pi) > 0.00001: #per comprendere come sfruttare al meglio abs ci ho messo molto, soprattutto per capire come aggiungere una condizione funzionante nel ciclo
+    while abs(pi_app - pi) > 0.00005: #per comprendere come sfruttare al meglio abs ci ho messo molto, soprattutto per capire come aggiungere una condizione funzionante nel ciclo
         if i % 2 == 0:  #se l'iterazione è pari aggiunge a pi app la sequenza con addizione, altrimenti sottrae la sequenza
             pi_app += n1 / n2
         else:
