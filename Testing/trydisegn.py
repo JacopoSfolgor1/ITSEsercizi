@@ -1,4 +1,4 @@
-n = input()
+n = input("inserisci numero e multiplo di numero:  ")
 m = n.split()
 n1 = int(m[0])
 n2 = int(m[1])
