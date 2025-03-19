@@ -41,6 +41,6 @@ while punteggio < 100:
             print("sconfitta")
             break
 else:
-    print("vittoria")            
+    print("vittoria",punteggio)            
     
     
