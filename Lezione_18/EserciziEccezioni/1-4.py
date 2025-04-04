@@ -167,5 +167,5 @@ x.query_date(17)
 x.query_date("88.13.0")  
 x.query_date("12.12.1212")  
 x.query_date()
-
-
+x.add_date(False)
+x.add_date(x)
