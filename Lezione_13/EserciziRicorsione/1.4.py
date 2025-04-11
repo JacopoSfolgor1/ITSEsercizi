@@ -10,7 +10,6 @@ significa che il numero n ha una sola cifra. In caso negativo, significa che il 
  dividere n per 10 per rimuovere l'ultima cifra e richiama ricorsivamente la funzione, fino a ottenere un numero con una sola cifra.'''
 
 
-def recursiveDigitCounter(n: int = None):
 
-    if n is not None:
-        if n 
+
+    
